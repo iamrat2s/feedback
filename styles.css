@@ -1,0 +1,77 @@
+/* CSS für das Feedback-Formular */
+
+/* Button-Styling */
+#zammad-feedback-form {
+  background-color: hsl(36, 100%, 50%);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Modal-Styling */
+.zammad-feedback-modal {
+  display: none; /* Verstecke Modal standardmäßig */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Hintergrundfarbe für das Modal */
+}
+
+.zammad-feedback-modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+/* Schließen-Schaltfläche-Styling */
+.zammad-feedback-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.zammad-feedback-close:hover,
+.zammad-feedback-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Feedback-Formularfeld-Styling */
+.zammad-feedback-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+/* Submit-Schaltfläche-Styling */
+.zammad-feedback-submit {
+  background-color: hsl(36, 100%, 50%);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.zammad-feedback-submit:hover {
+  background-color: hsl(36, 100%, 40%);
+}
+

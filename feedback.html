@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Formular</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<button id="zammad-feedback-form">Feedback</button>
+
+<script id="zammad_form_script" src="http://10.0.9.2/assets/form/form.js"></script>
+
+<script>
+$(function() {
+  $('#zammad-feedback-form').ZammadForm({
+    messageTitle: 'Feedback-Formular',
+    messageSubmit: 'Übermitteln',
+    messageThankYou: 'Vielen Dank für Ihr Feedback. Wir werden uns umgehend bei Ihnen melden.',
+    modal: true
+  });
+});
+</script>
+
+</body>
+</html>
+
