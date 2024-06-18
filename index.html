@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liebst du mich?</title>
+    <title>Do you love me?</title>
     <style>
         body {
             text-align: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             position: relative;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-color: #ffe6e6;
             margin: 0;
         }
+        h1 {
+            font-size: 3em;
+            color: #ff3366;
+        }
         .button {
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 15px 30px;
+            font-size: 20px;
             margin: 20px;
             cursor: pointer;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.1);
         }
         .yes {
-            background-color: #4CAF50;
+            background-color: #ff3366;
             color: white;
         }
         .no {
-            background-color: #f44336;
+            background-color: #333;
             color: white;
             position: absolute;
         }
@@ -41,15 +50,24 @@
         .gif {
             display: none;
             margin-top: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <h1>Do you love me?</h1>
-    <button class="button yes" onclick="showGif()">Ja</button>
-    <button class="button no" onmouseover="moveButton()">Nein</button>
-    <button class="button retry" onclick="retry()">Retry</button>
-    <img src="https://media1.tenor.com/m/o_5RQarGvJ0AAAAC/kiss.gif" class="gif" id="loveGif" alt="Love Gif">
+    <div class="container">
+        <h1>Do you love me?</h1>
+        <button class="button yes" onclick="showGif()">Yes</button>
+        <button class="button no" onmouseover="moveButton()">No</button>
+        <button class="button retry" onclick="retry()">Retry</button>
+        <img src="https://media1.tenor.com/m/o_5RQarGvJ0AAAAC/kiss.gif" class="gif" id="loveGif" alt="Love Gif">
+    </div>
     
     <script>
         function showGif() {
