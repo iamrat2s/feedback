@@ -1,29 +1,78 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback Formular</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liebst du mich?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+        .retry {
+            display: none;
+            background-color: #008CBA;
+            color: white;
+        }
+        .gif {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Do you love me?</h1>
+    <button class="button yes" onclick="showGif()">Ja</button>
+    <button class="button no" onmouseover="moveButton()">Nein</button>
+    <button class="button retry" onclick="retry()">Retry</button>
+    <img src="https://media1.tenor.com/m/o_5RQarGvJ0AAAAC/kiss.gif" class="gif" id="loveGif" alt="Love Gif">
+    
+    <script>
+        function showGif() {
+            document.querySelector('.yes').style.display = 'none';
+            document.querySelector('.no').style.display = 'none';
+            document.querySelector('.retry').style.display = 'inline-block';
+            document.getElementById('loveGif').style.display = 'block';
+        }
 
-<button id="zammad-feedback-form">Feedback</button>
+        function moveButton() {
+            var button = document.querySelector('.no');
+            var x = Math.floor(Math.random() * (window.innerWidth - button.clientWidth));
+            var y = Math.floor(Math.random() * (window.innerHeight - button.clientHeight));
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
 
-<script id="zammad_form_script" src="http://10.0.9.2/assets/form/form.js"></script>
-
-<script>
-$(function() {
-  $('#zammad-feedback-form').ZammadForm({
-    messageTitle: 'Feedback-Formular',
-    messageSubmit: 'Übermitteln',
-    messageThankYou: 'Vielen Dank für Ihr Feedback. Wir werden uns umgehend bei Ihnen melden.',
-    modal: true
-  });
-});
-</script>
-
+        function retry() {
+            document.querySelector('.yes').style.display = 'inline-block';
+            document.querySelector('.no').style.display = 'inline-block';
+            document.querySelector('.retry').style.display = 'none';
+            document.getElementById('loveGif').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
-
